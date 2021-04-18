@@ -6,24 +6,24 @@ const nameInverter = require('../nameInverter');
 describe('nameInverter', function() {
   it("should return true if an empty string returns an empty string", function (){
     const empty = "";
-    const result = nameInverter(empty);
-    assert.isTrue(result);
+    const expectedOutput = "";
+    assert.equal(nameInverter(empty), expectedOutput);
   });
   it("should return a single name when given a single name", function(){
     const single = "name";
-    const result = nameInverter(single);
-    assert.isTrue(result);
+    const expectedOutput = "name";
+    assert.equal(nameInverter(single), expectedOutput);
   });
   it ("should return a single name when passed a single name with extra spaces", function(){
     const name = "name ";
-    const result = nameInverter(name);
-    assert.isTrue(result);
+    const expectedOutput = "name ";
+    assert.equal(nameInverter(name), expectedOutput);
   });
   it ("should return a last-name, first-name when passed a first-name and last-name", function(){
     const firstLast = "Sean Day";
-    const result = nameInverter(firstLast);
-    assert.isTrue(result);
+    const expecteOutput = "Day Sean";
+    assert.equal(nameInverter(firstLast), expecteOutput);
   });
-  
+
 
 });
