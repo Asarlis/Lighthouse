@@ -6,13 +6,19 @@ const nameInverter = function(name) {
   }
   
   if (name === undefined) {
-    return console.error("Error")
+    return Error('Error')
   }
   const trimmed = name.trim();
   if (!trimmed.includes(" ")) {
     return trimmed;
   }
-
+for (const hon of name) {
+  if (honorific.includes(hon)) {
+    const honorificSlice = name.replace(hon, "")
+    const reversed = honorificSlice.split(" ").reverse().join(", ");
+      return reversed;
+  }
+}
   const reversed = trimmed.split(" ").reverse().join(", ");
   return reversed;
 }

@@ -34,6 +34,26 @@ describe('nameInverter', function() {
     const expectedOutput = "";
     assert.equal(nameInverter(name), expectedOutput);
   });
+  it("should return honorific first_name when passed an honorific first-name", function (){
+    const name = "Dr. Sean";
+    const expectedOutput = "Dr. Sean";
+    assert.equal(nameInverter(name), expectedOutput);
+  });
+  it("should return honorific last-name, first_name when passed an honorific first-name and last-name", function (){
+    const name = "Dr. Sean Day";
+    const expectedOutput = "Dr. Day, Sean";
+    assert.equal(nameInverter(name), expectedOutput);
+  });
+  it("should return honorific last-name, first_name when passed an honorific first-name and last-name with spaces around it", function (){
+    const name = "Dr. Sean Day ";
+    const expectedOutput = "Dr. Day, Sean";
+    assert.equal(nameInverter(name), expectedOutput);
+  });
+  it("should throw an error when undefined", function (){
+    const name = undefined;
+    const expectedOutput = Error('Error')
+    assert.equal(nameInverter(name), expectedOutput);
+  });
 
 
 });
