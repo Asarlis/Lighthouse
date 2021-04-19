@@ -1,16 +1,19 @@
 const nameInverter = function(name) {
   const honorific = ['Mr.', "Mrs.", "Ms.", "Dr."]
+
   if(name === "") {
     return "";
   }
-
   
+  if (name === undefined) {
+    return console.error("Error")
+  }
+  const trimmed = name.trim();
+  if (!trimmed.includes(" ")) {
+    return trimmed;
+  }
 
-  const reversed = name.split(" ").reverse().join(" ");
-  console.log(reversed)
+  const reversed = trimmed.split(" ").reverse().join(", ");
   return reversed;
 }
-
-nameInverter("sean day")
-
 module.exports = nameInverter;
