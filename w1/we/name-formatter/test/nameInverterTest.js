@@ -51,7 +51,7 @@ describe('nameInverter', function() {
   });
   it("should throw an error when undefined", function (){
     const name = undefined;
-    const expectedOutput = Error('Error')
+    const expectedOutput = 'Error';
     assert.equal(nameInverter(name), expectedOutput);
   });
 
