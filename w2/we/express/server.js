@@ -7,7 +7,7 @@ app.get("/", function(req,res){
 
 });
 
-app.get("/parks", function(req,res){
+app.get("/park", function(req,res){
     res.send("The Parks You've Seen");
 });
 
